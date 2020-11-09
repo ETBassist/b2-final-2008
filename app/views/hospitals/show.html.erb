@@ -4,6 +4,8 @@
   <%= @hospital.count_of_doctors %>
 </section>
 
-<% @hospital.uniq_doctors_universities.each do |university| %>
-  <%= university %>
-<% end %>
+<ul>
+  <% @hospital.uniq_doctors_universities.each do |university| %>
+    <li><%= university %></li>
+  <% end %>
+</ul>
