@@ -1,8 +1,8 @@
-<%= @doctor.name %>
-<%= @doctor.specialty %>
-<%= @doctor.university %>
+<%= @doctor.name %><br>
+<%= @doctor.specialty %><br>
+<%= @doctor.university %><br>
 
-<%= @doctor.hospital.name %>
+<%= @doctor.hospital.name %><br>
 
 <% @doctor.patients.each do |patient| %>
   <section id="patient-<%= patient.id %>">
