@@ -16,10 +16,10 @@ RSpec.describe "Patients/Index", type: :feature do
     visit '/patients'
 
     within("#patients-by-age") do
-      expect(page.all("p")[0]).to have_content(@patient2.name)
-      expect(page.all("p")[1]).to have_content(@patient3.name)
-      expect(page.all("p")[2]).to have_content(@patient1.name)
-      expect(page.all("p")[3]).to have_content(@patient4.name)
+      expect(page.all("li")[0]).to have_content(@patient2.name)
+      expect(page.all("li")[1]).to have_content(@patient3.name)
+      expect(page.all("li")[2]).to have_content(@patient1.name)
+      expect(page.all("li")[3]).to have_content(@patient4.name)
     end
   end
 end
