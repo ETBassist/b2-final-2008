@@ -9,7 +9,7 @@ RSpec.describe "Hospitals/Show", type: :feature do
     @doctor2 = @hospital.doctors.create!(name: "Alex Karev",
                                         specialty: "Pediatric Surgery",
                                         university: "John Hopkins University")
-    @doctor2 = @hospital.doctors.create!(name: "Miranda Bailey",
+    @doctor3 = @hospital.doctors.create!(name: "Miranda Bailey",
                                         specialty: "General Surgery",
                                         university: "Stanford University")
   end
@@ -21,5 +21,13 @@ RSpec.describe "Hospitals/Show", type: :feature do
     within("#doctor-count") do
       expect(page).to have_content(3)
     end
+  end
+
+  it "I should see a unique list of universities doctors at this hospital attended" do
+    visit "/hospitals/#{@hospital.id}"
+
+    expect(page).to have_content(@doctor1.university)
+    expect(page).to have_content(@doctor2.university)
+    expect(page).to have_content(@doctor3.university)
   end
 end
