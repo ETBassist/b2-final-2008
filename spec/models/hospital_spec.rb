@@ -17,6 +17,9 @@ describe Hospital, type: :model do
       doctor3 = hospital.doctors.create!(name: "Miranda Bailey",
                                           specialty: "General Surgery",
                                           university: "Stanford University")
+      hospital.doctors.create!(name: "Doc Ock",
+                                          specialty: "Physics?",
+                                          university: "Stanford University")
       expected = [doctor1.university, doctor2.university, doctor3.university]
 
       expect(hospital.uniq_doctors_universities).to eq(expected)
