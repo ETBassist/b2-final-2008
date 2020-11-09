@@ -33,4 +33,20 @@ describe 'As a visitor when I visit a doctors show page' do
       expect(page).to have_content(@patient2.name)
     end
   end
+
+  it "I can click a button next to each patients name to take them off that doctors caselod" do
+    visit "/doctors/#{@doctor.id}"
+
+    within("#patient-#{@patient1.id}") do
+      expect(page).to have_button("Remove From Caseload")
+    end
+
+    within("#patient-#{@patient2.id}") do
+      click_button("Remove From Caseload")
+    end
+
+    expect(current_path).to eq("/doctors/#{@doctor.id}")
+
+    expect(page).to_not have_selector("#patient-#{@patient2.id}")
+  end
 end
