@@ -1,7 +1,7 @@
 <%= @hospital.name %>
 
 <section id="doctor-count">
-  <%= @hospital.doctors.count %>
+  <%= @hospital.count_of_doctors %>
 </section>
 
 <% @hospital.uniq_doctors_universities.each do |university| %>
