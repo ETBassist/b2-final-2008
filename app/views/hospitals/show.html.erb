@@ -1,0 +1,11 @@
+<%= @hospital.name %>
+
+<section id="doctor-count">
+  <%= @hospital.count_of_doctors %>
+</section>
+
+<ul>
+  <% @hospital.uniq_doctors_universities.each do |university| %>
+    <li><%= university %></li>
+  <% end %>
+</ul>
